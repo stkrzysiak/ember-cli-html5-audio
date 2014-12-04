@@ -1,25 +1,23 @@
 # Ember-cli-html5-audio
 
-This README outlines the details of collaborating on this Ember addon.
+This is a basic ember-cli addon for creating an html5 element.  It serves more
+as an example of how it can be done.  It is just as easy as adding audio tags to
+your template.hbs file, but this was created for a page with many audio elements, 
+so this was cleaner.
+
+One interesting issue the author had was that the audio tag would not work with
+a nested `<source>` tag, therefor this was used: 
+`<audio controls preload="none" {{bind-attr src=src}}></audio>`
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+* npm install ember-cli-html5-audio
 
-## Running
+## Usage
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+In a template file, you can do something like 
+`{{html5-audio-basic url=track.url}}` 
+where track.url points to a song url.
 
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
 
 For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
